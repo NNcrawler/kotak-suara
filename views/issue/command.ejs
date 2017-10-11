@@ -1,0 +1,15 @@
+<%-include ../partials/header%>
+<%-include ../partials/menu%>
+
+<div class="modal-body">
+  <form method="post" action="/issue/respond/<%=id%>">
+  <div class="form-group">
+    <label class="form-control-label" for="formGroupExampleInput">Command Here</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input" name="respond">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+
+
+<%-include ../partials/footer%>

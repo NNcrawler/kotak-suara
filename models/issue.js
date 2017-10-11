@@ -1,4 +1,5 @@
 'use strict';
+const models = require('../models');
 module.exports = (sequelize, DataTypes) => {
   var Issue = sequelize.define('Issue', {
     GovermentId: DataTypes.STRING,
@@ -17,7 +18,14 @@ module.exports = (sequelize, DataTypes) => {
     Issue.belongsToMany(models.User, {through:models.Respond});
     Issue.hasMany(models.Respond);
     Issue.belongsTo(models.Goverment)
+    Issue.hasMany(models.VoteIssue)
   };
+
+  Issue.prototype.voteCount = function(){
+    return new Promise((resolve, reject)=>{
+      
+    })
+  }
 
   return Issue;
 };
