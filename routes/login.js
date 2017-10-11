@@ -16,7 +16,7 @@ router.get('/',checkPermission ,(req, res)=>{
 
 
 router.post('/', function(req, res, next) {
- // console.log(req.body);
+ console.log(req.body);
   Models.User.find({where:{username:req.body.username}}).then((user)=>{
     console.log(user);
 

@@ -67,5 +67,8 @@ router.post('/respond/:id', (req, res)=>{
 	})
 })
 
+router.get('/tes', (req, res)=>{
+	console.log(req.body)
+})
 
 module.exports = router
