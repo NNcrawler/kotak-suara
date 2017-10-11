@@ -8,9 +8,8 @@
 		  <%=result_issue.detail%>
 		  <br>
 		  <a class="btn btn-outline-secondary" href="/issue/respond/<%=result_issue.id%>/command" role="button">Command here</a>
-		  <a class="btn btn-outline-secondary" href="/issue/respond/<%=result_issue.id%>/voteup" role="button">Up Vote</a>
-		  <a class="btn btn-outline-secondary" href="#" role="button">Down Vote</a>
-		  <%-include ../issue/modalCommand%>
+		  <a class="btn btn-outline-secondary" href="/issue/respond/<%=result_issue.id%>/up" role="button">Up Vote</a>
+		  <a class="btn btn-outline-secondary" href="/issue/respond/<%=result_issue.id%>/down" role="button">Down Vote</a>
 	  </li>
 		  <%result_respond.forEach(respond=>{%>
 	  <li>
