@@ -7,16 +7,31 @@
 		  <br>
 		  <%=result_issue.detail%>
 		  <br>
-		  <a class="btn btn-outline-secondary" href="/issue/respond/<%=result_issue.id%>/command" role="button">Command here</a>
-		  <a class="btn btn-outline-secondary" href="/issue/respond/<%=result_issue.id%>/voteup" role="button">Up Vote</a>
-		  <a class="btn btn-outline-secondary" href="#" role="button">Down Vote</a>
-		  <%-include ../issue/modalCommand%>
+		  
+		  
+		  <a <%-include ../issue/modalCommand%>
+		  <div class="form-group">
+		 <form method="post" action="/issue/respond/<%=result_issue.id%>">
+			    <label class="form-control-label" for="formGroupExampleInput">Your Command</label>
+			    <input type="hidden" value="result_issue.id" name="IssueId">
+			    <input type="hidden" value="result_issue.id" name="userId">
+			    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input" name="respond">
+			  </div>
+			  <button type="submit" class="btn btn-primary pull-right">Submit</button>
+		</form>
+	</div></a>
+	<br>
+	<div>
+		<a class="btn btn-default btn-sm" href="/issue/respond/<%=result_issue.id%>/voteup" role="button" ><span class="glyphicon glyphicon-thumbs-up"></span> Like</a>
+		<a class="btn btn-default btn-sm" href="#" role="button"><span class="glyphicon glyphicon-thumbs-down"></span> Unlike</a>
+	</div>
 	  </li>
-		  <%result_respond.forEach(respond=>{%>
-	  <li>
-	  	<%=respond.respond%>
-	  </li>
-	  	<%})%>
+
+	  	<ul class="list-group">
+	  	<%result_respond.forEach(respond=>{%>
+		  <li class="list-group-item"><%=respond.respond%></li>
+		  <%})%>
+		</ul>
 	</ul>
 
 <%-include ../partials/footer%>
