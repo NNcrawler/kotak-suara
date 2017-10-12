@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   Respond.associate = function (models) {
-    Respond.belongsTo(models.User);
+    //Respond.belongsToMany(models.User);
     Respond.belongsTo(models.Issue);
   };
 
