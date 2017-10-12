@@ -36,7 +36,8 @@ router.get('/respond/:id',checkPermission, (req, res)=>{
 	}).catch((err)=>{
 		res.send(err)
 	})
-	
+
+
 })
 
 router.post('/respond/:id', (req, res)=>{
@@ -51,16 +52,23 @@ router.post('/respond/:id', (req, res)=>{
 	})
 })
 
-router.get('/respond/:id/voteup', (req, res)=>{
+
+
+router.get('/respond/:id/:vote',checkPermission, (req, res)=>{
 	Models.User.findById(req.session.userId).then((user)=>{
-		return user.upVote(req.params.id, Models.VoteIssue)
+		if(req.params.vote == 'up'){
+			return user.vote(req.params.id, 'up', Models.VoteIssue)
+		}else if(req.params.vote == 'down'){
+			return user.vote(req.params.id, 'down', Models.VoteIssue)
+		}
 	}).then((voteIssue)=>{
 		res.send(voteIssue)
 	}).catch((err)=>{
 		res.send(err)
 	})
-	
+
 })
+
 
 
 router.get('/respond/:id/command', (req, res)=>{

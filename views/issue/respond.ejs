@@ -7,6 +7,7 @@
 		  <br>
 		  <%=result_issue.detail%>
 		  <br>
+
 		  
 		  
 		  <a <%-include ../issue/modalCommand%>
@@ -22,9 +23,10 @@
 	</div></a>
 	<br>
 	<div>
-		<a class="btn btn-default btn-sm" href="/issue/respond/<%=result_issue.id%>/voteup" role="button" ><span class="glyphicon glyphicon-thumbs-up"></span> Like</a>
-		<a class="btn btn-default btn-sm" href="#" role="button"><span class="glyphicon glyphicon-thumbs-down"></span> Unlike</a>
+		<a class="btn btn-default btn-sm" href="/issue/respond/<%=result_issue.id%>/up" role="button" ><span class="glyphicon glyphicon-thumbs-up"></span> Like</a>
+		<a class="btn btn-default btn-sm" href="/issue/respond/<%=result_issue.id%>/down" role="button"><span class="glyphicon glyphicon-thumbs-down"></span> Unlike</a>
 	</div>
+
 	  </li>
 
 	  	<ul class="list-group">

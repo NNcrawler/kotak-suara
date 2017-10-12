@@ -2,6 +2,8 @@
   "development": {
     "username": "postgres",
     "password": "123",
+    "username": "admin",
+    "password": "admin",
     "database": "kotak_suara",
     "host": "127.0.0.1",
     "dialect": "postgres"
